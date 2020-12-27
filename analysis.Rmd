@@ -1,0 +1,87 @@
+---
+title: "PRA 2. Limpieza y análisis de datos"
+output:
+  html_document:
+    df_print: paged
+    number_sections: yes
+    theme: cosmo
+    toc: yes
+    toc_depth: 2
+---
+
+# Descripción del dataset. 
+
+El dataset elegido corresponde al generado en la PRAC1. El dataset contiene los resultados obtenidos por distintos equipos profesionales de fútbol en diversas competiciones a lo largo de la última década.
+
+Nos serviremos de estos datos para anlizar los diferentes clubs de futbol a nivel global así como para buscar patrones entre ellos.
+
+```{r}
+df <- read.csv(file = 'football_competitions.csv')
+head(df)
+```
+```{r}
+str(df)
+```
+
+
+El fichero contiene una tabla con diez columnas, siendo las dos primeras de tipo cadena y el resto de tipo entero.
+
+Los campos son: 
+
+
+* competition:  Nombre de la competición, año y grupo dentro de los cuales el equipo
+indicado obtuvo los resultados indicados.
+* pl_team: Nombre del equipo.
+* pl_pi: Número de partidos jugados.
+* pl_w: Número de partidos ganados.
+* pl_d: Número de partidos empatados.
+* pl_l: Número de partidos perdidos.
+* pl_f: Número de goles a favor.
+* pl_a: Número de goles en contra.
+* pl_gd: Diferencia de goles.
+* pl_pts: Puntos obtenidos por el equipo.
+
+
+# Integración y selección de los datos de interés a analizar
+
+# Limpieza de datos
+
+## Elementos vacíos y cero.
+
+Primero vamos a ver si hay valores vacíos en el dataset.
+
+```{r}
+sum(is.na(df))
+```
+No hay, buscamos valores 0.
+
+```{r}
+sum(df==0)
+```
+Hay muchos datos que son igual a cero. Debido a la naturaleza del dataframe no es necesario quitarlos, porque puede ser que un equipo tenga 0 puntos, victorias, derrotas, etc.
+
+## Valores extremos.
+
+```{r}
+boxplot(df[3:7])
+```
+```{r}
+boxplot(df[7:10])
+```
+
+todo: ver que equipos son los que sobresalen en partidos ganados, perdidos y goles encajados.
+
+Buscar explicación de pl_gd.
+
+# Análisis de los datos.
+
+## Selección de los grupos de datos que se quieren analizar/comparar (planificación de los análisis a aplicar).
+
+## Comprobación de la normalidad y homogeneidad de la varianza.
+
+## Aplicación de pruebas estadísticas para comparar los grupos de datos. En función de los datos y el objetivo del estudio, aplicar pruebas de contraste de hipótesis, correlaciones, regresiones, etc. Aplicar al menos tres métodos de análisis diferentes.
+
+# Representación de los resultados a partir de tablas y gráficas.
+
+# Resolución del problema. A partir de los resultados obtenidos, ¿cuáles son las conclusiones? ¿Los resultados permiten responder al problema?
+
