@@ -16,7 +16,7 @@ output:
 
 El dataset elegido corresponde al generado en la PRAC1. El dataset contiene los resultados obtenidos por distintos equipos profesionales de fútbol en diversas competiciones a lo largo de la última década.
 
-Nos serviremos de estos datos para anlizar los diferentes clubs de futbol a nivel global así como para buscar patrones entre ellos.
+Nos serviremos de estos datos para anlizar los diferentes clubs de fútbol a nivel global así como para buscar patrones entre ellos.
 
 ```{r}
 df <- read.csv(file = 'football_competitions.csv')
