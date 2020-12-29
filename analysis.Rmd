@@ -1,6 +1,9 @@
 ---
 title: "PRA 2. Limpieza y análisis de datos"
 output:
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
   html_document:
     df_print: paged
     number_sections: yes
@@ -44,6 +47,8 @@ indicado obtuvo los resultados indicados.
 
 # Integración y selección de los datos de interés a analizar
 
+todo: hablar que análisis vamos a hacer para poder hacer este apartado
+
 # Limpieza de datos
 
 ## Elementos vacíos y cero.
@@ -51,8 +56,9 @@ indicado obtuvo los resultados indicados.
 Primero vamos a ver si hay valores vacíos en el dataset.
 
 ```{r}
-sum(is.na(df))
+sapply(df, function(x) sum(is.na(x)))
 ```
+
 No hay, buscamos valores 0.
 
 ```{r}
@@ -62,26 +68,50 @@ Hay muchos datos que son igual a cero. Debido a la naturaleza del dataframe no e
 
 ## Valores extremos.
 
+Para la detección de outliers o valores extremos utilizamos la función boxplots.stats(), en concreto el atributo "out" que nos devuelve los valores que distan mucho del rango intercuartílico que se dibujan en los diagramas de caja.
+
 ```{r}
-boxplot(df[3:7])
+boxplot.stats(df$pl_pi)$out
 ```
 ```{r}
-boxplot(df[7:10])
+boxplot.stats(df$pl_w)$out
 ```
 
-todo: ver que equipos son los que sobresalen en partidos ganados, perdidos y goles encajados.
+```{r}
+boxplot.stats(df$pl_d)$out
+```
 
-Buscar explicación de pl_gd.
+```{r}
+boxplot.stats(df$pl_l)$out
+```
+
+```{r}
+boxplot.stats(df$pl_f)$out
+```
+
+```{r}
+boxplot.stats(df$pl_a)$out
+```
+
+A penas hay valores outliers y tras comprobarlos, vemos que efectivamente hay equipos que han ganado más de 30 partidos en una comoptición y lo mismo ocurre con las derrotas y los goles en contra.
+
 
 # Análisis de los datos.
 
 ## Selección de los grupos de datos que se quieren analizar/comparar (planificación de los análisis a aplicar).
 
+P_w, P_l, p_d
+
 ## Comprobación de la normalidad y homogeneidad de la varianza.
 
 ## Aplicación de pruebas estadísticas para comparar los grupos de datos. En función de los datos y el objetivo del estudio, aplicar pruebas de contraste de hipótesis, correlaciones, regresiones, etc. Aplicar al menos tres métodos de análisis diferentes.
 
+Aquí puede ir  estadísticas de los equipos más destacados y un clustering de equipos 
+
 # Representación de los resultados a partir de tablas y gráficas.
 
+plots de los equipos y un plot del clustering con sus fronteras de decisión
+
 # Resolución del problema. A partir de los resultados obtenidos, ¿cuáles son las conclusiones? ¿Los resultados permiten responder al problema?
+
 
