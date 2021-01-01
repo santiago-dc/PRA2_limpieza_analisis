@@ -13,9 +13,9 @@ output:
 ---
 
 ```{r}
-install.packages("dplyr")
-install.packages("stringi")
-install.packages("igraph")
+#install.packages("dplyr")
+#install.packages("stringi")
+#install.packages("igraph")
 library(dplyr)
 library(stringi)
 library(igraph)
@@ -98,6 +98,10 @@ df_clean[!is.na(intermediate_comp_year[,1]),'begin'] <- as.integer(intermediate_
 df_clean[!is.na(intermediate_comp_year[,1]),'end'] <- as.integer(paste("20", intermediate_comp_year[!is.na(intermediate_comp_year[,1]),3], sep=""))
 df_clean$pl_team <- stri_match(df$pl_team, regex="([^\\*]*)( \\*)?")[,2]
 df_clean$pl_team <- stri_match(df_clean$pl_team, regex="(.*[^ ])( )*")[,2]
+
+df_clean$female <- !is.na(stri_match(df_clean$comp, regex="Women"))
+df_clean$sub21 <- !is.na(stri_match(df_clean$comp, regex="U(nder)?( )*-( )*?21")[,1])
+table(df_clean$female,df_clean$sub21)
 ```
 
 ```{r}
@@ -114,7 +118,6 @@ df_clean$comp_comm <- membership(fc)[paste("C:",df_clean$comp)]
 df_clean$team_comm <- membership(fc)[paste("T:",df_clean$pl_team)]
 colors <- rainbow(max(membership(fc)))
 table(df_clean$team_comm, df_clean$comp_comm)
-
 bb <- df_clean[,c("pl_team", "team_comm")] %>% distinct()
 bbb <- df_clean[,c("comp", "comp_comm")] %>% distinct()
 comm <- list()
