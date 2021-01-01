@@ -211,11 +211,17 @@ df_final <- read.csv(file = 'clean.csv')
 
 ## Selección de los grupos de datos que se quieren analizar/comparar (planificación de los análisis a aplicar).
 
-P_w, P_l, p_d
+Queremos estudiar diferencias cualitativas entre las comunidades identificadas durante la fase de integración de datos. El algoritmo ha identificado 15 comunidades distintas.
+
+```{r}
+max(df_final$comp_comm)
+```
+
+El grafo formado por los equipos y las competiciones, dentro de sus respectivas comunidades, queda entonces representado de la siguiente manera:
 
 ```{r}
 colors <- rainbow(max(membership(fc)))
-table(df_clean$team_comm, df_clean$comp_comm)
+
 bb <- df_clean[,c("pl_team", "team_comm")] %>% distinct()
 bbb <- df_clean[,c("comp", "comp_comm")] %>% distinct()
 comm <- list()
@@ -232,23 +238,137 @@ for (name in V(graph)$name){
   col <- c(col, colors[comm[[name]]])
   
 }
-plot(graph, vertex.label=NA, vertex.size=15, arrow.width=1,vertex.color=col)
-legend('topleft',legend=1:max(membership(fc)), pch=20, col=colors)
+plot(graph, vertex.label=NA, vertex.size=15, arrow.width=1,vertex.color=col);legend('topleft',legend=1:max(membership(fc)), pch=20, col=colors)
+```
+
+Vemos diferentes componentes conexas, como se espera, debido a que el dataset incluye diferentes categorías y ligas.
+
+Veamos a continuación cuales son las competiciones incluidas en cada una de las comunidades identificadas:
+
+
+```{r}
+unique(as.character(df_final[df_final$comp_comm == 1, "comp"]))
 ```
 
 ```{r}
-groups(fc)
+unique(as.character(df_final[df_final$comp_comm == 2, "comp"]))
 ```
 
 ```{r}
-table(df_clean$female,df_clean$sub21)
+unique(as.character(df_final[df_final$comp_comm == 3, "comp"]))
 ```
+
+```{r}
+unique(as.character(df_final[df_final$comp_comm == 4, "comp"]))
+```
+
+```{r}
+unique(as.character(df_final[df_final$comp_comm == 5, "comp"]))
+```
+
+```{r}
+unique(as.character(df_final[df_final$comp_comm == 6, "comp"]))
+```
+
+```{r}
+unique(as.character(df_final[df_final$comp_comm == 7, "comp"]))
+```
+
+```{r}
+unique(as.character(df_final[df_final$comp_comm == 8, "comp"]))
+```
+
+```{r}
+unique(as.character(df_final[df_final$comp_comm == 9, "comp"]))
+```
+
+```{r}
+unique(as.character(df_final[df_final$comp_comm == 10, "comp"]))
+```
+
+```{r}
+unique(as.character(df_final[df_final$comp_comm == 11, "comp"]))
+```
+
+```{r}
+unique(as.character(df_final[df_final$comp_comm == 12, "comp"]))
+```
+
+```{r}
+unique(as.character(df_final[df_final$comp_comm == 13, "comp"]))
+```
+
+```{r}
+unique(as.character(df_final[df_final$comp_comm == 14, "comp"]))
+```
+
+```{r}
+unique(as.character(df_final[df_final$comp_comm == 15, "comp"]))
+```
+
+Teniendo en cuenta que cada componente conexa puede albergar más de una comunidad, queremos ser capaces de localizar vínculos entre componentes conexas adjacentes. Recordando que cada entrada en el dataset corresponde a un equipo jugando dentro de una competición, y que las comunidades de ambos pueden no coincidir, podemos observar vínculos entre comunidades mediante la siguiente matriz de confusión:
+
+```{r}
+table(df_clean$team_comm, df_clean$comp_comm)
+```
+
+Podemos, por ejemplo, observar vínculos entre las comunidades 1 y 10, a las cuales corresponden competiciones inglesas.
+
+Dado que, a la vista del grafo y la matriz, las competiciones inglesas son numerosas y parecen estar vinculadas mediante pocos enlaces con el resto de competiciones europeas, vamos a tratar de comparar los promedios de goles y puntuaciones entre estos dos grupos de competiciones.
+
+De esta manera consideramos un grupo A, formado por las comunidades 1 y 10, frente a un grupo B, formado por las comunidades 3, 4, 5, 9.
+
+```{r}
+df_A <- df_final[df_final$comp_comm %in% c(1,10), c("pl_f","pl_a","pl_w","pl_pts")]
+df_B <- df_final[df_final$comp_comm %in% c(3,4,5,9), c("pl_f","pl_a","pl_w","pl_pts")]
+```
+
+TODO: NORMALIZAR VALORES
+
+```{r}
+(df_final$pl_f / (df_final$pl_w + df_final$pl_d + df_final$pl_l))[df_final$comp_comm %in% c(1,10),]
+(df_final$pl_f / (df_final$pl_w + df_final$pl_d + df_final$pl_l))[df_final$comp_comm %in% c(3,4,5,9),]
+```
+
+TODO: considerar tambien grupos Masculino/Femenino, Sub21/Absoluto
 
 ## Comprobación de la normalidad y homogeneidad de la varianza.
+
+```{r}
+c(mean(df_A$pl_f),mean(df_B$pl_f),mean(df_A$pl_a),mean(df_B$pl_a),
+  mean(df_A$pl_w),mean(df_B$pl_w),mean(df_A$pl_pts),mean(df_B$pl_pts))
+```
+
+
+```{r}
+c(sd(df_A$pl_f),sd(df_B$pl_f),sd(df_A$pl_a),sd(df_B$pl_a),sd(df_A$pl_w),sd(df_B$pl_w),sd(df_A$pl_pts),sd(df_B$pl_pts))
+```
+
+```{r}
+data1 <- df_A
+data1$pl_f <- (df_final$pl_f / (df_final$pl_w + df_final$pl_d + df_final$pl_l))[df_final$comp_comm %in% c(1,10)]
+data1$group <- 'A' 
+data2 <- df_B
+data2$pl_f <- (df_final$pl_f / (df_final$pl_w + df_final$pl_d + df_final$pl_l))[df_final$comp_comm %in% c(3,4,5,9)]
+data2$group <- 'B'
+data <- bind_rows(data1,data2)
+plot(aov(pl_pts~group, data))
+```
+
+TODO: terminar
+
 
 ## Aplicación de pruebas estadísticas para comparar los grupos de datos. En función de los datos y el objetivo del estudio, aplicar pruebas de contraste de hipótesis, correlaciones, regresiones, etc. Aplicar al menos tres métodos de análisis diferentes.
 
 Aquí puede ir  estadísticas de los equipos más destacados y un clustering de equipos 
+
+```{r}
+wilcox.test(data$pl_f~data$group)
+```
+
+TODO: incorporar los años de las competiciones en un analisis de regresion
+
+TODO: estudiar correlacion entre goles a favor y puntos obtenidos
 
 # Representación de los resultados a partir de tablas y gráficas.
 
