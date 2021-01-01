@@ -12,6 +12,15 @@ output:
     toc_depth: 2
 ---
 
+```{r}
+install.packages("dplyr")
+install.packages("stringi")
+install.packages("igraph")
+library(dplyr)
+library(stringi)
+library(igraph)
+```
+
 # Descripción del dataset. 
 
 El dataset elegido corresponde al generado en la PRAC1. El dataset contiene los resultados obtenidos por distintos equipos profesionales de fútbol en diversas competiciones a lo largo de la última década.
@@ -48,6 +57,87 @@ indicado obtuvo los resultados indicados.
 # Integración y selección de los datos de interés a analizar
 
 todo: hablar que análisis vamos a hacer para poder hacer este apartado
+
+```{r}
+max(df$pl_pi - df$pl_w - df$pl_d -df$pl_l)
+```
+
+```{r}
+min(df$pl_pi)
+```
+
+```{r}
+comp_variation <- (df %>% group_by(df$competition) %>% summarise(pl_pi = sd(pl_pi)))
+comp_variation <- comp_variation[comp_variation$pl_pi > 0,]
+comp_variation
+df[df$competition %in% comp_variation$'df$competition',c('competition','pl_team','pl_pi')]
+```
+
+```{r}
+max(df$pl_a - df$pl_f + df$pl_gd)
+```
+
+```{r}
+stri_match("American MLS League - Western Conference 2020/21", regex="(.*?)[ ]*([^ ]*\\d)$")
+stri_match("American MLS League - Western Conference", regex="(.*?)[ ]*-[ ]*(.*)")
+```
+
+```{r}
+df_clean <- df[,c('pl_w','pl_d','pl_l','pl_f','pl_a','pl_pts')]
+
+intermediate_comp <- stri_match(df$competition, regex="(.*?)[ ]*([^ ]*\\d)$")
+intermediate_comp_name <- stri_match(intermediate_comp[,2], regex="(.*?)[ ]+-[ ]+(.*)")
+df_clean[is.na(intermediate_comp_name[,1]), 'comp'] <- intermediate_comp[is.na(intermediate_comp_name[,1]),2]
+df_clean[is.na(intermediate_comp_name[,1]), 'group'] <- NA
+df_clean[!is.na(intermediate_comp_name[,1]), 'comp'] <- intermediate_comp_name[!is.na(intermediate_comp_name[,1]),2]
+df_clean[!is.na(intermediate_comp_name[,1]), 'group'] <- intermediate_comp_name[!is.na(intermediate_comp_name[,1]),3]
+intermediate_comp_year <- stri_match(intermediate_comp[,3], regex="(.*)/(.*)")
+df_clean[is.na(intermediate_comp_year[,1]),'begin'] <- as.integer(intermediate_comp[is.na(intermediate_comp_year[,1]),3])
+df_clean[is.na(intermediate_comp_year[,1]),'end'] <- as.integer(intermediate_comp[is.na(intermediate_comp_year[,1]),3])
+df_clean[!is.na(intermediate_comp_year[,1]),'begin'] <- as.integer(intermediate_comp_year[!is.na(intermediate_comp_year[,1]),2])
+df_clean[!is.na(intermediate_comp_year[,1]),'end'] <- as.integer(paste("20", intermediate_comp_year[!is.na(intermediate_comp_year[,1]),3], sep=""))
+df_clean$pl_team <- stri_match(df$pl_team, regex="([^\\*]*)( \\*)?")[,2]
+df_clean$pl_team <- stri_match(df_clean$pl_team, regex="(.*[^ ])( )*")[,2]
+```
+
+```{r}
+b <- df_clean[,c("comp","pl_team")] %>% distinct()
+n <- length(b[,1])
+g <- c()
+for (i in 1:n ){
+g <- c(g, paste( "C:", b[i,"comp"]), paste("T:", b[i,"pl_team"]))
+}
+graph <- make_graph(g, directed=FALSE)
+#V(graph)$type <- V(graph)$name %in% b[,"comp"]
+fc <- fastgreedy.community(graph)
+df_clean$comp_comm <- membership(fc)[paste("C:",df_clean$comp)]
+df_clean$team_comm <- membership(fc)[paste("T:",df_clean$pl_team)]
+colors <- rainbow(max(membership(fc)))
+table(df_clean$team_comm, df_clean$comp_comm)
+
+bb <- df_clean[,c("pl_team", "team_comm")] %>% distinct()
+bbb <- df_clean[,c("comp", "comp_comm")] %>% distinct()
+comm <- list()
+n <- length(bb[,1])
+for (i in 1:n ){
+comm[paste("T:",bb[i,"pl_team"])] <- bb[i,"team_comm"]
+}
+n <- length(bbb[,1])
+for (i in 1:n ){
+comm[paste("C:",bbb[i,"comp"])] <- bbb[i,"comp_comm"]
+}
+col <- c()
+for (name in V(graph)$name){
+  col <- c(col, colors[comm[[name]]])
+  
+}
+plot(graph, vertex.label=NA, vertex.size=15, arrow.width=1,vertex.color=col)
+legend('topleft',legend=1:max(membership(fc)), pch=20, col=colors)
+```
+
+```{r}
+groups(fc)
+```
 
 # Limpieza de datos
 
@@ -95,6 +185,10 @@ boxplot.stats(df$pl_a)$out
 
 A penas hay valores outliers y tras comprobarlos, vemos que efectivamente hay equipos que han ganado más de 30 partidos en una comoptición y lo mismo ocurre con las derrotas y los goles en contra.
 
+
+```{r}
+write.csv(df_clean, 'clean.csv')
+```
 
 # Análisis de los datos.
 
