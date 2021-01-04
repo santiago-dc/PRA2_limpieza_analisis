@@ -699,3 +699,13 @@ summary(lm(df_masculino_femenino$pl_pts ~
              df_masculino_femenino$group + df_masculino_femenino$pl_f
            + df_masculino_femenino$pl_a + df_masculino_femenino$pl_w ))[4]
 ```
+
+
+
+|-----------------------------|-------------|
+|Contribuciones               |   Firma     |
+|-----------------------------|-------------|
+|Investigación previa         |  ICR, SDC   |
+|Redacción de las respuestas  |  ICR, SDC   |
+|Desarrollo código            |  ICR, SDC   |
+|-----------------------------|-------------|
