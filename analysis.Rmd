@@ -196,23 +196,23 @@ sum((df_clean[,"pl_w"] + df_clean[,"pl_d"] + df_clean[,"pl_l"]) == 0)
 Para la detección de outliers o valores extremos utilizamos la función boxplots.stats(), en concreto el atributo "out" que nos devuelve los valores que distan mucho del rango intercuartílico que se dibujan en los diagramas de caja.
 
 ```{r}
-boxplot.stats(df$pl_w)$out
+boxplot.stats(df_clean$pl_w)$out
 ```
 
 ```{r}
-boxplot.stats(df$pl_d)$out
+boxplot.stats(df_clean$pl_d)$out
 ```
 
 ```{r}
-boxplot.stats(df$pl_l)$out
+boxplot.stats(df_clean$pl_l)$out
 ```
 
 ```{r}
-boxplot.stats(df$pl_f)$out
+boxplot.stats(df_clean$pl_f)$out
 ```
 
 ```{r}
-boxplot.stats(df$pl_a)$out
+boxplot.stats(df_clean$pl_a)$out
 ```
 
 A penas hay valores outliers y tras comprobarlos, vemos que efectivamente hay equipos que han ganado más de 30 partidos en una competición y lo mismo ocurre con las derrotas y los goles en contra.
