@@ -1075,18 +1075,6 @@
 "1074",2,0,1,7,5,6,"Copa America","Group D",2016,2017,"Chile",FALSE,FALSE,2,2
 "1075",1,0,2,4,10,3,"Copa America","Group D",2016,2017,"Panama",FALSE,FALSE,2,2
 "1076",0,0,3,2,7,0,"Copa America","Group D",2016,2017,"Bolivia",FALSE,FALSE,2,2
-"1077",0,0,0,0,0,0,"Copa America","Group A",2018,2019,"Brazil",FALSE,FALSE,2,2
-"1078",0,0,0,0,0,0,"Copa America","Group A",2018,2019,"Peru",FALSE,FALSE,2,2
-"1079",0,0,0,0,0,0,"Copa America","Group A",2018,2019,"Venezuela",FALSE,FALSE,2,2
-"1080",0,0,0,0,0,0,"Copa America","Group A",2018,2019,"Bolivia",FALSE,FALSE,2,2
-"1081",0,0,0,0,0,0,"Copa America","Group B",2018,2019,"Argentina",FALSE,FALSE,2,2
-"1082",0,0,0,0,0,0,"Copa America","Group B",2018,2019,"Colombia",FALSE,FALSE,2,2
-"1083",0,0,0,0,0,0,"Copa America","Group B",2018,2019,"Paraguay",FALSE,FALSE,2,2
-"1084",0,0,0,0,0,0,"Copa America","Group B",2018,2019,"Qatar",FALSE,FALSE,2,2
-"1085",0,0,0,0,0,0,"Copa America","Group C",2018,2019,"Uruguay",FALSE,FALSE,2,2
-"1086",0,0,0,0,0,0,"Copa America","Group C",2018,2019,"Chile",FALSE,FALSE,2,2
-"1087",0,0,0,0,0,0,"Copa America","Group C",2018,2019,"Japan",FALSE,FALSE,2,2
-"1088",0,0,0,0,0,0,"Copa America","Group C",2018,2019,"Ecuador",FALSE,FALSE,2,2
 "1089",2,1,0,8,0,7,"Copa America","Group A",2019,2020,"Brazil",FALSE,FALSE,2,2
 "1090",1,2,0,3,1,5,"Copa America","Group A",2019,2020,"Venezuela",FALSE,FALSE,2,2
 "1091",1,1,1,3,6,4,"Copa America","Group A",2019,2020,"Peru",FALSE,FALSE,2,2
@@ -1711,30 +1699,6 @@
 "1710",1,2,0,4,3,5,"European Championships","Group F",2016,2017,"Iceland",FALSE,FALSE,7,7
 "1711",0,3,0,4,4,3,"European Championships","Group F",2016,2017,"Portugal",FALSE,FALSE,7,7
 "1712",0,1,2,1,4,1,"European Championships","Group F",2016,2017,"Austria",FALSE,FALSE,7,7
-"1713",0,0,0,0,0,0,"European Championships","Group A",2019,2020,"Italy",FALSE,FALSE,7,7
-"1714",0,0,0,0,0,0,"European Championships","Group A",2019,2020,"Switzerland",FALSE,FALSE,7,7
-"1715",0,0,0,0,0,0,"European Championships","Group A",2019,2020,"Turkey",FALSE,FALSE,7,7
-"1716",0,0,0,0,0,0,"European Championships","Group A",2019,2020,"Wales",FALSE,FALSE,7,7
-"1717",0,0,0,0,0,0,"European Championships","Group B",2019,2020,"Belgium",FALSE,FALSE,7,7
-"1718",0,0,0,0,0,0,"European Championships","Group B",2019,2020,"Denmark",FALSE,FALSE,7,7
-"1719",0,0,0,0,0,0,"European Championships","Group B",2019,2020,"Finland",FALSE,FALSE,7,7
-"1720",0,0,0,0,0,0,"European Championships","Group B",2019,2020,"Russia",FALSE,FALSE,7,7
-"1721",0,0,0,0,0,0,"European Championships","Group C",2019,2020,"Austria",FALSE,FALSE,7,7
-"1722",0,0,0,0,0,0,"European Championships","Group C",2019,2020,"Netherlands",FALSE,FALSE,7,7
-"1723",0,0,0,0,0,0,"European Championships","Group C",2019,2020,"Ukraine",FALSE,FALSE,7,7
-"1724",0,0,0,0,0,0,"European Championships","Group C",2019,2020,"Winner play-off Path D",FALSE,FALSE,7,7
-"1725",0,0,0,0,0,0,"European Championships","Group D",2019,2020,"Croatia",FALSE,FALSE,7,7
-"1726",0,0,0,0,0,0,"European Championships","Group D",2019,2020,"Czech Republic",FALSE,FALSE,7,7
-"1727",0,0,0,0,0,0,"European Championships","Group D",2019,2020,"England",FALSE,FALSE,7,7
-"1728",0,0,0,0,0,0,"European Championships","Group D",2019,2020,"Winner play-off Path C",FALSE,FALSE,7,7
-"1729",0,0,0,0,0,0,"European Championships","Group E",2019,2020,"Poland",FALSE,FALSE,7,7
-"1730",0,0,0,0,0,0,"European Championships","Group E",2019,2020,"Spain",FALSE,FALSE,7,7
-"1731",0,0,0,0,0,0,"European Championships","Group E",2019,2020,"Sweden",FALSE,FALSE,7,7
-"1732",0,0,0,0,0,0,"European Championships","Group E",2019,2020,"Winner play-off Path B",FALSE,FALSE,7,7
-"1733",0,0,0,0,0,0,"European Championships","Group F",2019,2020,"France",FALSE,FALSE,7,7
-"1734",0,0,0,0,0,0,"European Championships","Group F",2019,2020,"Germany",FALSE,FALSE,7,7
-"1735",0,0,0,0,0,0,"European Championships","Group F",2019,2020,"Portugal",FALSE,FALSE,7,7
-"1736",0,0,0,0,0,0,"European Championships","Group F",2019,2020,"Winner play-off Path A",FALSE,FALSE,7,7
 "1737",3,2,1,9,4,11,"Europa League","Group A",2009,2010,"Anderlecht",FALSE,FALSE,3,3
 "1738",3,2,1,8,6,11,"Europa League","Group A",2009,2010,"Ajax",FALSE,FALSE,3,3
 "1739",2,0,4,6,8,6,"Europa League","Group A",2009,2010,"Dinamo Zagreb",FALSE,FALSE,3,3
@@ -3235,59 +3199,6 @@
 "3234",4,4,2,20,10,16,"World Cup Qualifying","Group Two",2009,2010,"Israel",FALSE,FALSE,7,7
 "3235",1,2,7,4,25,5,"World Cup Qualifying","Group Two",2009,2010,"Luxembourg",FALSE,FALSE,7,7
 "3236",0,3,7,6,18,3,"World Cup Qualifying","Group Two",2009,2010,"Moldova",FALSE,FALSE,7,7
-"3237",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Eight",2011,2012,"England",FALSE,FALSE,7,7
-"3238",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Eight",2011,2012,"Moldova",FALSE,FALSE,7,7
-"3239",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Eight",2011,2012,"Montenegro",FALSE,FALSE,7,7
-"3240",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Eight",2011,2012,"Poland",FALSE,FALSE,7,7
-"3241",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Eight",2011,2012,"San Marino",FALSE,FALSE,7,7
-"3242",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Eight",2011,2012,"Ukraine",FALSE,FALSE,7,7
-"3243",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Five",2011,2012,"Albania",FALSE,FALSE,7,7
-"3244",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Five",2011,2012,"Cyprus",FALSE,FALSE,7,7
-"3245",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Five",2011,2012,"Iceland",FALSE,FALSE,7,7
-"3246",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Five",2011,2012,"Norway",FALSE,FALSE,7,7
-"3247",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Five",2011,2012,"Slovenia",FALSE,FALSE,7,7
-"3248",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Five",2011,2012,"Switzerland",FALSE,FALSE,7,7
-"3249",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Four",2011,2012,"Andorra",FALSE,FALSE,7,7
-"3250",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Four",2011,2012,"Estonia",FALSE,FALSE,7,7
-"3251",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Four",2011,2012,"Netherlands",FALSE,FALSE,7,7
-"3252",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Four",2011,2012,"Hungary",FALSE,FALSE,7,7
-"3253",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Four",2011,2012,"Romania",FALSE,FALSE,7,7
-"3254",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Four",2011,2012,"Turkey",FALSE,FALSE,7,7
-"3255",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Nine",2011,2012,"Belarus",FALSE,FALSE,7,7
-"3256",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Nine",2011,2012,"Finland",FALSE,FALSE,7,7
-"3257",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Nine",2011,2012,"France",FALSE,FALSE,7,7
-"3258",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Nine",2011,2012,"Georgia",FALSE,FALSE,7,7
-"3259",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Nine",2011,2012,"Spain",FALSE,FALSE,7,7
-"3260",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group One",2011,2012,"Belgium",FALSE,FALSE,7,7
-"3261",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group One",2011,2012,"Croatia",FALSE,FALSE,7,7
-"3262",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group One",2011,2012,"North Macedonia",FALSE,FALSE,7,7
-"3263",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group One",2011,2012,"Scotland",FALSE,FALSE,7,7
-"3264",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group One",2011,2012,"Serbia",FALSE,FALSE,7,7
-"3265",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group One",2011,2012,"Wales",FALSE,FALSE,7,7
-"3266",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Seven",2011,2012,"Bosnia and Herzegovina",FALSE,FALSE,7,7
-"3267",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Seven",2011,2012,"Greece",FALSE,FALSE,7,7
-"3268",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Seven",2011,2012,"Latvia",FALSE,FALSE,7,7
-"3269",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Seven",2011,2012,"Liechtenstein",FALSE,FALSE,7,7
-"3270",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Seven",2011,2012,"Lithuania",FALSE,FALSE,7,7
-"3271",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Seven",2011,2012,"Slovakia",FALSE,FALSE,7,7
-"3272",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Six",2011,2012,"Azerbaijan",FALSE,FALSE,7,7
-"3273",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Six",2011,2012,"Israel",FALSE,FALSE,7,7
-"3274",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Six",2011,2012,"Luxembourg",FALSE,FALSE,7,7
-"3275",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Six",2011,2012,"Northern Ireland",FALSE,FALSE,7,7
-"3276",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Six",2011,2012,"Portugal",FALSE,FALSE,7,7
-"3277",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Six",2011,2012,"Russia",FALSE,FALSE,7,7
-"3278",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Three",2011,2012,"Austria",FALSE,FALSE,7,7
-"3279",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Three",2011,2012,"Faroe Islands",FALSE,FALSE,7,7
-"3280",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Three",2011,2012,"Germany",FALSE,FALSE,7,7
-"3281",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Three",2011,2012,"Kazakhstan",FALSE,FALSE,7,7
-"3282",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Three",2011,2012,"Republic of Ireland",FALSE,FALSE,7,7
-"3283",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Three",2011,2012,"Sweden",FALSE,FALSE,7,7
-"3284",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Two",2011,2012,"Armenia",FALSE,FALSE,7,7
-"3285",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Two",2011,2012,"Bulgaria",FALSE,FALSE,7,7
-"3286",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Two",2011,2012,"Czech Republic",FALSE,FALSE,7,7
-"3287",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Two",2011,2012,"Denmark",FALSE,FALSE,7,7
-"3288",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Two",2011,2012,"Italy",FALSE,FALSE,7,7
-"3289",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group Two",2011,2012,"Malta",FALSE,FALSE,7,7
 "3290",6,1,0,13,2,19,"FIFA World Cup European Qualifying","Group A",2012,2013,"Belgium",FALSE,FALSE,7,7
 "3291",5,1,1,10,4,16,"FIFA World Cup European Qualifying","Group A",2012,2013,"Croatia",FALSE,FALSE,7,7
 "3292",2,1,4,9,9,7,"FIFA World Cup European Qualifying","Group A",2012,2013,"Serbia",FALSE,FALSE,7,7
@@ -3354,58 +3265,6 @@
 "3353",3,4,3,18,12,13,"FIFA World Cup European Qualifying","Group H",2013,2014,"Poland",FALSE,FALSE,7,7
 "3354",3,2,5,12,17,11,"FIFA World Cup European Qualifying","Group H",2013,2014,"Moldova",FALSE,FALSE,7,7
 "3355",0,0,10,1,54,0,"FIFA World Cup European Qualifying","Group H",2013,2014,"San Marino",FALSE,FALSE,7,7
-"3356",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group A",2015,2016,"Belarus",FALSE,FALSE,7,7
-"3357",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group A",2015,2016,"Bulgaria",FALSE,FALSE,7,7
-"3358",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group A",2015,2016,"France",FALSE,FALSE,7,7
-"3359",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group A",2015,2016,"Luxembourg",FALSE,FALSE,7,7
-"3360",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group A",2015,2016,"Netherlands",FALSE,FALSE,7,7
-"3361",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group A",2015,2016,"Sweden",FALSE,FALSE,7,7
-"3362",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group B",2015,2016,"Andorra",FALSE,FALSE,7,7
-"3363",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group B",2015,2016,"Faroe Islands",FALSE,FALSE,7,7
-"3364",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group B",2015,2016,"Hungary",FALSE,FALSE,7,7
-"3365",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group B",2015,2016,"Latvia",FALSE,FALSE,7,7
-"3366",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group B",2015,2016,"Portugal",FALSE,FALSE,7,7
-"3367",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group B",2015,2016,"Switzerland",FALSE,FALSE,7,7
-"3368",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group C",2015,2016,"Azerbaijan",FALSE,FALSE,7,7
-"3369",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group C",2015,2016,"Czech Republic",FALSE,FALSE,7,7
-"3370",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group C",2015,2016,"Germany",FALSE,FALSE,7,7
-"3371",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group C",2015,2016,"Northern Ireland",FALSE,FALSE,7,7
-"3372",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group C",2015,2016,"Norway",FALSE,FALSE,7,7
-"3373",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group C",2015,2016,"San Marino",FALSE,FALSE,7,7
-"3374",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group D",2015,2016,"Austria",FALSE,FALSE,7,7
-"3375",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group D",2015,2016,"Georgia",FALSE,FALSE,7,7
-"3376",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group D",2015,2016,"Moldova",FALSE,FALSE,7,7
-"3377",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group D",2015,2016,"Republic of Ireland",FALSE,FALSE,7,7
-"3378",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group D",2015,2016,"Serbia",FALSE,FALSE,7,7
-"3379",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group D",2015,2016,"Wales",FALSE,FALSE,7,7
-"3380",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group E",2015,2016,"Armenia",FALSE,FALSE,7,7
-"3381",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group E",2015,2016,"Denmark",FALSE,FALSE,7,7
-"3382",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group E",2015,2016,"Kazakhstan",FALSE,FALSE,7,7
-"3383",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group E",2015,2016,"Montenegro",FALSE,FALSE,7,7
-"3384",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group E",2015,2016,"Poland",FALSE,FALSE,7,7
-"3385",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group E",2015,2016,"Romania",FALSE,FALSE,7,7
-"3386",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group F",2015,2016,"England",FALSE,FALSE,7,7
-"3387",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group F",2015,2016,"Lithuania",FALSE,FALSE,7,7
-"3388",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group F",2015,2016,"Malta",FALSE,FALSE,7,7
-"3389",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group F",2015,2016,"Scotland",FALSE,FALSE,7,7
-"3390",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group F",2015,2016,"Slovakia",FALSE,FALSE,7,7
-"3391",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group F",2015,2016,"Slovenia",FALSE,FALSE,7,7
-"3392",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group G",2015,2016,"Albania",FALSE,FALSE,7,7
-"3393",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group G",2015,2016,"Israel",FALSE,FALSE,7,7
-"3394",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group G",2015,2016,"Italy",FALSE,FALSE,7,7
-"3395",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group G",2015,2016,"Liechtenstein",FALSE,FALSE,7,7
-"3396",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group G",2015,2016,"North Macedonia",FALSE,FALSE,7,7
-"3397",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group G",2015,2016,"Spain",FALSE,FALSE,7,7
-"3398",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group H",2015,2016,"Belgium",FALSE,FALSE,7,7
-"3399",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group H",2015,2016,"Bosnia and Herzegovina",FALSE,FALSE,7,7
-"3400",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group H",2015,2016,"Cyprus",FALSE,FALSE,7,7
-"3401",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group H",2015,2016,"Estonia",FALSE,FALSE,7,7
-"3402",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group H",2015,2016,"Greece",FALSE,FALSE,7,7
-"3403",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group I",2015,2016,"Croatia",FALSE,FALSE,7,7
-"3404",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group I",2015,2016,"Finland",FALSE,FALSE,7,7
-"3405",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group I",2015,2016,"Iceland",FALSE,FALSE,7,7
-"3406",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group I",2015,2016,"Turkey",FALSE,FALSE,7,7
-"3407",0,0,0,0,0,0,"FIFA World Cup European Qualifying","Group I",2015,2016,"Ukraine",FALSE,FALSE,7,7
 "3408",3,1,0,11,3,10,"FIFA World Cup CONCACAF Qualifying","1st Round",2015,2016,"Trinidad and Tobago",FALSE,FALSE,2,2
 "3409",2,1,1,10,3,7,"FIFA World Cup CONCACAF Qualifying","1st Round",2015,2016,"United States of America",FALSE,FALSE,2,2
 "3410",2,0,2,7,6,6,"FIFA World Cup CONCACAF Qualifying","1st Round",2015,2016,"Guatemala",FALSE,FALSE,2,2
@@ -3592,16 +3451,6 @@
 "3591",3,4,3,13,19,13,"FIFA World Cup CONCACAF Qualifying","1st Round",2018,2019,"Honduras",FALSE,FALSE,2,2
 "3592",3,3,4,17,13,12,"FIFA World Cup CONCACAF Qualifying","1st Round",2018,2019,"United States of America",FALSE,FALSE,2,2
 "3593",2,0,8,7,19,6,"FIFA World Cup CONCACAF Qualifying","1st Round",2018,2019,"Trinidad and Tobago",FALSE,FALSE,2,2
-"3594",0,0,0,0,0,0,"FIFA World Cup South American","Qualifying Tournament",2019,2020,"Argentina",FALSE,FALSE,2,2
-"3595",0,0,0,0,0,0,"FIFA World Cup South American","Qualifying Tournament",2019,2020,"Bolivia",FALSE,FALSE,2,2
-"3596",0,0,0,0,0,0,"FIFA World Cup South American","Qualifying Tournament",2019,2020,"Brazil",FALSE,FALSE,2,2
-"3597",0,0,0,0,0,0,"FIFA World Cup South American","Qualifying Tournament",2019,2020,"Chile",FALSE,FALSE,2,2
-"3598",0,0,0,0,0,0,"FIFA World Cup South American","Qualifying Tournament",2019,2020,"Colombia",FALSE,FALSE,2,2
-"3599",0,0,0,0,0,0,"FIFA World Cup South American","Qualifying Tournament",2019,2020,"Ecuador",FALSE,FALSE,2,2
-"3600",0,0,0,0,0,0,"FIFA World Cup South American","Qualifying Tournament",2019,2020,"Paraguay",FALSE,FALSE,2,2
-"3601",0,0,0,0,0,0,"FIFA World Cup South American","Qualifying Tournament",2019,2020,"Peru",FALSE,FALSE,2,2
-"3602",0,0,0,0,0,0,"FIFA World Cup South American","Qualifying Tournament",2019,2020,"Uruguay",FALSE,FALSE,2,2
-"3603",0,0,0,0,0,0,"FIFA World Cup South American","Qualifying Tournament",2019,2020,"Venezuela",FALSE,FALSE,2,2
 "3604",3,0,2,8,5,9,"FIFA World Cup Asian Qualifying","Group One",2019,2020,"Turkmenistan",FALSE,FALSE,2,2
 "3605",2,2,0,10,0,8,"FIFA World Cup Asian Qualifying","Group One",2019,2020,"Korea Republic",FALSE,FALSE,2,2
 "3606",2,2,1,5,3,8,"FIFA World Cup Asian Qualifying","Group One",2019,2020,"Lebanon",FALSE,FALSE,2,2
@@ -6100,61 +5949,6 @@
 "6099",3,1,2,14,8,10,"UEFA Nations League","Group D4",2018,2019,"Armenia",FALSE,FALSE,7,7
 "6100",2,0,4,5,15,6,"UEFA Nations League","Group D4",2018,2019,"Gibraltar",FALSE,FALSE,7,7
 "6101",1,1,4,7,12,4,"UEFA Nations League","Group D4",2018,2019,"Liechtenstein",FALSE,FALSE,7,7
-"6102",0,0,0,0,0,0,"UEFA Nations League","Group A1",2019,2020,"Bosnia and Herzegovina",FALSE,FALSE,7,7
-"6103",0,0,0,0,0,0,"UEFA Nations League","Group A1",2019,2020,"Italy",FALSE,FALSE,7,7
-"6104",0,0,0,0,0,0,"UEFA Nations League","Group A1",2019,2020,"Netherlands",FALSE,FALSE,7,7
-"6105",0,0,0,0,0,0,"UEFA Nations League","Group A1",2019,2020,"Poland",FALSE,FALSE,7,7
-"6106",0,0,0,0,0,0,"UEFA Nations League","Group A2",2019,2020,"Belgium",FALSE,FALSE,7,7
-"6107",0,0,0,0,0,0,"UEFA Nations League","Group A2",2019,2020,"Denmark",FALSE,FALSE,7,7
-"6108",0,0,0,0,0,0,"UEFA Nations League","Group A2",2019,2020,"England",FALSE,FALSE,7,7
-"6109",0,0,0,0,0,0,"UEFA Nations League","Group A2",2019,2020,"Iceland",FALSE,FALSE,7,7
-"6110",0,0,0,0,0,0,"UEFA Nations League","Group A3",2019,2020,"Croatia",FALSE,FALSE,7,7
-"6111",0,0,0,0,0,0,"UEFA Nations League","Group A3",2019,2020,"France",FALSE,FALSE,7,7
-"6112",0,0,0,0,0,0,"UEFA Nations League","Group A3",2019,2020,"Portugal",FALSE,FALSE,7,7
-"6113",0,0,0,0,0,0,"UEFA Nations League","Group A3",2019,2020,"Sweden",FALSE,FALSE,7,7
-"6114",0,0,0,0,0,0,"UEFA Nations League","Group A4",2019,2020,"Germany",FALSE,FALSE,7,7
-"6115",0,0,0,0,0,0,"UEFA Nations League","Group A4",2019,2020,"Spain",FALSE,FALSE,7,7
-"6116",0,0,0,0,0,0,"UEFA Nations League","Group A4",2019,2020,"Switzerland",FALSE,FALSE,7,7
-"6117",0,0,0,0,0,0,"UEFA Nations League","Group A4",2019,2020,"Ukraine",FALSE,FALSE,7,7
-"6118",0,0,0,0,0,0,"UEFA Nations League","Group B1",2019,2020,"Austria",FALSE,FALSE,7,7
-"6119",0,0,0,0,0,0,"UEFA Nations League","Group B1",2019,2020,"Northern Ireland",FALSE,FALSE,7,7
-"6120",0,0,0,0,0,0,"UEFA Nations League","Group B1",2019,2020,"Norway",FALSE,FALSE,7,7
-"6121",0,0,0,0,0,0,"UEFA Nations League","Group B1",2019,2020,"Romania",FALSE,FALSE,7,7
-"6122",0,0,0,0,0,0,"UEFA Nations League","Group B2",2019,2020,"Czech Republic",FALSE,FALSE,7,7
-"6123",0,0,0,0,0,0,"UEFA Nations League","Group B2",2019,2020,"Israel",FALSE,FALSE,7,7
-"6124",0,0,0,0,0,0,"UEFA Nations League","Group B2",2019,2020,"Scotland",FALSE,FALSE,7,7
-"6125",0,0,0,0,0,0,"UEFA Nations League","Group B2",2019,2020,"Slovakia",FALSE,FALSE,7,7
-"6126",0,0,0,0,0,0,"UEFA Nations League","Group B3",2019,2020,"Hungary",FALSE,FALSE,7,7
-"6127",0,0,0,0,0,0,"UEFA Nations League","Group B3",2019,2020,"Russia",FALSE,FALSE,7,7
-"6128",0,0,0,0,0,0,"UEFA Nations League","Group B3",2019,2020,"Serbia",FALSE,FALSE,7,7
-"6129",0,0,0,0,0,0,"UEFA Nations League","Group B3",2019,2020,"Turkey",FALSE,FALSE,7,7
-"6130",0,0,0,0,0,0,"UEFA Nations League","Group B4",2019,2020,"Bulgaria",FALSE,FALSE,7,7
-"6131",0,0,0,0,0,0,"UEFA Nations League","Group B4",2019,2020,"Finland",FALSE,FALSE,7,7
-"6132",0,0,0,0,0,0,"UEFA Nations League","Group B4",2019,2020,"Republic of Ireland",FALSE,FALSE,7,7
-"6133",0,0,0,0,0,0,"UEFA Nations League","Group B4",2019,2020,"Wales",FALSE,FALSE,7,7
-"6134",0,0,0,0,0,0,"UEFA Nations League","Group C1",2019,2020,"Azerbaijan",FALSE,FALSE,7,7
-"6135",0,0,0,0,0,0,"UEFA Nations League","Group C1",2019,2020,"Cyprus",FALSE,FALSE,7,7
-"6136",0,0,0,0,0,0,"UEFA Nations League","Group C1",2019,2020,"Luxembourg",FALSE,FALSE,7,7
-"6137",0,0,0,0,0,0,"UEFA Nations League","Group C1",2019,2020,"Montenegro",FALSE,FALSE,7,7
-"6138",0,0,0,0,0,0,"UEFA Nations League","Group C2",2019,2020,"Armenia",FALSE,FALSE,7,7
-"6139",0,0,0,0,0,0,"UEFA Nations League","Group C2",2019,2020,"Estonia",FALSE,FALSE,7,7
-"6140",0,0,0,0,0,0,"UEFA Nations League","Group C2",2019,2020,"Georgia",FALSE,FALSE,7,7
-"6141",0,0,0,0,0,0,"UEFA Nations League","Group C2",2019,2020,"North Macedonia",FALSE,FALSE,7,7
-"6142",0,0,0,0,0,0,"UEFA Nations League","Group C3",2019,2020,"Greece",FALSE,FALSE,7,7
-"6143",0,0,0,0,0,0,"UEFA Nations League","Group C3",2019,2020,"Kosovo",FALSE,FALSE,7,7
-"6144",0,0,0,0,0,0,"UEFA Nations League","Group C3",2019,2020,"Moldova",FALSE,FALSE,7,7
-"6145",0,0,0,0,0,0,"UEFA Nations League","Group C3",2019,2020,"Slovenia",FALSE,FALSE,7,7
-"6146",0,0,0,0,0,0,"UEFA Nations League","Group C4",2019,2020,"Albania",FALSE,FALSE,7,7
-"6147",0,0,0,0,0,0,"UEFA Nations League","Group C4",2019,2020,"Belarus",FALSE,FALSE,7,7
-"6148",0,0,0,0,0,0,"UEFA Nations League","Group C4",2019,2020,"Kazakhstan",FALSE,FALSE,7,7
-"6149",0,0,0,0,0,0,"UEFA Nations League","Group C4",2019,2020,"Lithuania",FALSE,FALSE,7,7
-"6150",0,0,0,0,0,0,"UEFA Nations League","Group D1",2019,2020,"Andorra",FALSE,FALSE,7,7
-"6151",0,0,0,0,0,0,"UEFA Nations League","Group D1",2019,2020,"Faroe Islands",FALSE,FALSE,7,7
-"6152",0,0,0,0,0,0,"UEFA Nations League","Group D1",2019,2020,"Latvia",FALSE,FALSE,7,7
-"6153",0,0,0,0,0,0,"UEFA Nations League","Group D1",2019,2020,"Malta",FALSE,FALSE,7,7
-"6154",0,0,0,0,0,0,"UEFA Nations League","Group D2",2019,2020,"Gibraltar",FALSE,FALSE,7,7
-"6155",0,0,0,0,0,0,"UEFA Nations League","Group D2",2019,2020,"Liechtenstein",FALSE,FALSE,7,7
-"6156",0,0,0,0,0,0,"UEFA Nations League","Group D2",2019,2020,"San Marino",FALSE,FALSE,7,7
 "6157",2,1,1,5,2,7,"UEFA Nations League","Group A1",2020,2021,"Poland",FALSE,FALSE,7,7
 "6158",1,3,0,3,2,6,"UEFA Nations League","Group A1",2020,2021,"Italy",FALSE,FALSE,7,7
 "6159",1,2,1,2,2,5,"UEFA Nations League","Group A1",2020,2021,"Netherlands",FALSE,FALSE,7,7
@@ -6242,14 +6036,6 @@
 "6241",2,0,1,8,6,6,"European Under-21 Championship","Group B",2013,2014,"Holland U21",FALSE,TRUE,11,11
 "6242",1,0,2,4,5,3,"European Under-21 Championship","Group B",2013,2014,"Germany U21",FALSE,TRUE,11,11
 "6243",0,0,3,2,8,0,"European Under-21 Championship","Group B",2013,2014,"Russia U21",FALSE,TRUE,11,11
-"6244",0,0,0,0,0,0,"European Under-21 Championship","Group A",2014,2015,"Germany U21",FALSE,TRUE,11,11
-"6245",0,0,0,0,0,0,"European Under-21 Championship","Group A",2014,2015,"Denmark U21",FALSE,TRUE,11,11
-"6246",0,0,0,0,0,0,"European Under-21 Championship","Group A",2014,2015,"Czech Rep U21",FALSE,TRUE,11,11
-"6247",0,0,0,0,0,0,"European Under-21 Championship","Group A",2014,2015,"Serbia U21",FALSE,TRUE,11,11
-"6248",0,0,0,0,0,0,"European Under-21 Championship","Group B",2014,2015,"Italy U21",FALSE,TRUE,11,11
-"6249",0,0,0,0,0,0,"European Under-21 Championship","Group B",2014,2015,"England U21",FALSE,TRUE,11,11
-"6250",0,0,0,0,0,0,"European Under-21 Championship","Group B",2014,2015,"Sweden U21",FALSE,TRUE,11,11
-"6251",0,0,0,0,0,0,"European Under-21 Championship","Group B",2014,2015,"Portugal U21",FALSE,TRUE,11,11
 "6252",2,0,1,4,4,6,"European Under-21 Championship","Group A",2015,2016,"Denmark U21",FALSE,TRUE,11,11
 "6253",1,2,0,5,2,5,"European Under-21 Championship","Group A",2015,2016,"Germany U21",FALSE,TRUE,11,11
 "6254",1,1,1,6,3,4,"European Under-21 Championship","Group A",2015,2016,"Czech Rep U21",FALSE,TRUE,11,11
@@ -6270,18 +6056,6 @@
 "6269",2,0,1,5,1,6,"European Under-21 Championship","Group C",2017,2018,"Germany U21",FALSE,TRUE,11,11
 "6270",1,0,2,4,7,3,"European Under-21 Championship","Group C",2017,2018,"Denmark U21",FALSE,TRUE,11,11
 "6271",1,0,2,5,7,3,"European Under-21 Championship","Group C",2017,2018,"Czech Rep U21",FALSE,TRUE,11,11
-"6272",0,0,0,0,0,0,"European Under-21 Championship","Group A",2018,2019,"Belgium U21",FALSE,TRUE,11,11
-"6273",0,0,0,0,0,0,"European Under-21 Championship","Group A",2018,2019,"Italy U21",FALSE,TRUE,11,11
-"6274",0,0,0,0,0,0,"European Under-21 Championship","Group A",2018,2019,"Poland U21",FALSE,TRUE,11,11
-"6275",0,0,0,0,0,0,"European Under-21 Championship","Group A",2018,2019,"Spain U21",FALSE,TRUE,11,11
-"6276",0,0,0,0,0,0,"European Under-21 Championship","Group B",2018,2019,"Austria U21",FALSE,TRUE,11,11
-"6277",0,0,0,0,0,0,"European Under-21 Championship","Group B",2018,2019,"Denmark U21",FALSE,TRUE,11,11
-"6278",0,0,0,0,0,0,"European Under-21 Championship","Group B",2018,2019,"Germany U21",FALSE,TRUE,11,11
-"6279",0,0,0,0,0,0,"European Under-21 Championship","Group B",2018,2019,"Serbia U21",FALSE,TRUE,11,11
-"6280",0,0,0,0,0,0,"European Under-21 Championship","Group C",2018,2019,"Croatia U21",FALSE,TRUE,11,11
-"6281",0,0,0,0,0,0,"European Under-21 Championship","Group C",2018,2019,"England U21",FALSE,TRUE,11,11
-"6282",0,0,0,0,0,0,"European Under-21 Championship","Group C",2018,2019,"France U21",FALSE,TRUE,11,11
-"6283",0,0,0,0,0,0,"European Under-21 Championship","Group C",2018,2019,"Romania U21",FALSE,TRUE,11,11
 "6284",2,0,1,8,4,6,"European Under-21 Championship","Group A",2019,2020,"Spain U21",FALSE,TRUE,11,11
 "6285",2,0,1,6,3,6,"European Under-21 Championship","Group A",2019,2020,"Italy U21",FALSE,TRUE,11,11
 "6286",2,0,1,4,7,6,"European Under-21 Championship","Group A",2019,2020,"Poland U21",FALSE,TRUE,11,11
@@ -6574,30 +6348,6 @@
 "6573",2,0,1,4,3,6,"FIFA Women's World Cup","Group F",2015,2016,"England Women",TRUE,FALSE,6,6
 "6574",1,1,1,4,3,4,"FIFA Women's World Cup","Group F",2015,2016,"Colombia Women",TRUE,FALSE,6,6
 "6575",0,1,2,2,8,1,"FIFA Women's World Cup","Group F",2015,2016,"Mexico Women",TRUE,FALSE,6,6
-"6576",0,0,0,0,0,0,"FIFA Women's World Cup","Group A",2018,2019,"France Women",TRUE,FALSE,6,6
-"6577",0,0,0,0,0,0,"FIFA Women's World Cup","Group A",2018,2019,"Korea Republic Women",TRUE,FALSE,6,6
-"6578",0,0,0,0,0,0,"FIFA Women's World Cup","Group A",2018,2019,"Nigeria Women",TRUE,FALSE,6,6
-"6579",0,0,0,0,0,0,"FIFA Women's World Cup","Group A",2018,2019,"Norway Women",TRUE,FALSE,6,6
-"6580",0,0,0,0,0,0,"FIFA Women's World Cup","Group B",2018,2019,"China Women",TRUE,FALSE,6,6
-"6581",0,0,0,0,0,0,"FIFA Women's World Cup","Group B",2018,2019,"Germany Women",TRUE,FALSE,6,6
-"6582",0,0,0,0,0,0,"FIFA Women's World Cup","Group B",2018,2019,"South Africa Women",TRUE,FALSE,6,6
-"6583",0,0,0,0,0,0,"FIFA Women's World Cup","Group B",2018,2019,"Spain Women",TRUE,FALSE,6,6
-"6584",0,0,0,0,0,0,"FIFA Women's World Cup","Group C",2018,2019,"Australia Women",TRUE,FALSE,6,6
-"6585",0,0,0,0,0,0,"FIFA Women's World Cup","Group C",2018,2019,"Brazil Women",TRUE,FALSE,6,6
-"6586",0,0,0,0,0,0,"FIFA Women's World Cup","Group C",2018,2019,"Italy Ladies",TRUE,FALSE,6,6
-"6587",0,0,0,0,0,0,"FIFA Women's World Cup","Group C",2018,2019,"Jamaica Women",TRUE,FALSE,6,6
-"6588",0,0,0,0,0,0,"FIFA Women's World Cup","Group D",2018,2019,"Argentina Women",TRUE,FALSE,6,6
-"6589",0,0,0,0,0,0,"FIFA Women's World Cup","Group D",2018,2019,"England Women",TRUE,FALSE,6,6
-"6590",0,0,0,0,0,0,"FIFA Women's World Cup","Group D",2018,2019,"Japan Women",TRUE,FALSE,6,6
-"6591",0,0,0,0,0,0,"FIFA Women's World Cup","Group D",2018,2019,"Scotland Women",TRUE,FALSE,6,6
-"6592",0,0,0,0,0,0,"FIFA Women's World Cup","Group E",2018,2019,"Cameroon Women",TRUE,FALSE,6,6
-"6593",0,0,0,0,0,0,"FIFA Women's World Cup","Group E",2018,2019,"Canada Women",TRUE,FALSE,6,6
-"6594",0,0,0,0,0,0,"FIFA Women's World Cup","Group E",2018,2019,"Holland Women",TRUE,FALSE,6,6
-"6595",0,0,0,0,0,0,"FIFA Women's World Cup","Group E",2018,2019,"New Zealand Women",TRUE,FALSE,6,6
-"6596",0,0,0,0,0,0,"FIFA Women's World Cup","Group F",2018,2019,"Chile Women",TRUE,FALSE,6,6
-"6597",0,0,0,0,0,0,"FIFA Women's World Cup","Group F",2018,2019,"Sweden Women",TRUE,FALSE,6,6
-"6598",0,0,0,0,0,0,"FIFA Women's World Cup","Group F",2018,2019,"Thailand Women",TRUE,FALSE,6,6
-"6599",0,0,0,0,0,0,"FIFA Women's World Cup","Group F",2018,2019,"USA Women",TRUE,FALSE,6,6
 "6600",3,0,0,7,1,9,"FIFA Women's World Cup","Group A",2019,2020,"France Women",TRUE,FALSE,6,6
 "6601",2,0,1,6,3,6,"FIFA Women's World Cup","Group A",2019,2020,"Norway Women",TRUE,FALSE,6,6
 "6602",1,0,2,2,4,3,"FIFA Women's World Cup","Group A",2019,2020,"Nigeria Women",TRUE,FALSE,6,6

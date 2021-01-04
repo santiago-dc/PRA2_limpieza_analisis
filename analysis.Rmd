@@ -12,13 +12,17 @@ output:
     toc_depth: 2
 ---
 
-```{r}
+
+
+```{r, echo=FALSE, results='hide', message=FALSE}
 #install.packages("dplyr")
 #install.packages("stringi")
 #install.packages("igraph")
+#install.packages("EnvStats")
 library(dplyr)
 library(stringi)
 library(igraph)
+library(EnvStats)
 ```
 
 # Descripción del dataset. 
@@ -172,7 +176,20 @@ sum(df_clean[,c('pl_w','pl_d','pl_l',
             'pl_f','pl_a','pl_pts',
             'begin','end')]==0)
 ```
-Hay muchos datos que son igual a cero. Debido a la naturaleza del dataframe no es necesario quitarlos, porque puede ser que un equipo tenga 0 puntos, victorias, derrotas, etc.
+Hay muchos datos que son igual a cero. Debido a la naturaleza del dataframe no es necesario quitarlos, porque puede ser que un equipo tenga 0 puntos, victorias, derrotas, etc. Por el contrario, debemos asegurarnos de que excluimos las entradas del dataset en las cuales no figure ningun partido jugado, para evitar divisiones entre cero a la hora de normalizar los goles y puntos.
+
+```{r}
+sum((df_clean[,"pl_w"] + df_clean[,"pl_d"] + df_clean[,"pl_l"]) == 0)
+```
+
+```{r}
+df_clean <- df_clean[(df_clean[,"pl_w"] + df_clean[,"pl_d"] + df_clean[,"pl_l"]) > 0,]
+```
+
+
+```{r}
+sum((df_clean[,"pl_w"] + df_clean[,"pl_d"] + df_clean[,"pl_l"]) == 0)
+```
 
 ## Valores extremos.
 
@@ -238,7 +255,8 @@ for (name in V(graph)$name){
   col <- c(col, colors[comm[[name]]])
   
 }
-plot(graph, vertex.label=NA, vertex.size=15, arrow.width=1,vertex.color=col);legend('topleft',legend=1:max(membership(fc)), pch=20, col=colors)
+plot(graph, vertex.label=NA, vertex.size=15, arrow.width=1,vertex.color=col);legend(
+  'topleft',legend=1:max(membership(fc)), pch=20, col=colors)
 ```
 
 Vemos diferentes componentes conexas, como se espera, debido a que el dataset incluye diferentes categorías y ligas.
@@ -306,7 +324,7 @@ unique(as.character(df_final[df_final$comp_comm == 14, "comp"]))
 unique(as.character(df_final[df_final$comp_comm == 15, "comp"]))
 ```
 
-Teniendo en cuenta que cada componente conexa puede albergar más de una comunidad, queremos ser capaces de localizar vínculos entre componentes conexas adjacentes. Recordando que cada entrada en el dataset corresponde a un equipo jugando dentro de una competición, y que las comunidades de ambos pueden no coincidir, podemos observar vínculos entre comunidades mediante la siguiente matriz de confusión:
+Teniendo en cuenta que cada componente conexa puede albergar más de una comunidad, queremos ser capaces de localizar vínculos entre componentes conexas adyacentes. Recordando que cada entrada en el dataset corresponde a un equipo jugando dentro de una competición, y que las comunidades de ambos pueden no coincidir, podemos observar vínculos entre comunidades mediante la siguiente matriz de confusión:
 
 ```{r}
 table(df_clean$team_comm, df_clean$comp_comm)
@@ -320,60 +338,364 @@ De esta manera consideramos un grupo A, formado por las comunidades 1 y 10, fren
 
 ```{r}
 df_A <- df_final[df_final$comp_comm %in% c(1,10), c("pl_f","pl_a","pl_w","pl_pts")]
+df_A$pl_f <- (df_final$pl_f / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[df_final$comp_comm %in% c(1,10)]
+df_A$pl_a <- (df_final$pl_a / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[df_final$comp_comm %in% c(1,10)]
+df_A$pl_w <- (df_final$pl_w / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[df_final$comp_comm %in% c(1,10)]
+df_A$pl_pts <- (df_final$pl_pts / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[df_final$comp_comm %in% c(1,10)]
+df_A$group <- "A"
 df_B <- df_final[df_final$comp_comm %in% c(3,4,5,9), c("pl_f","pl_a","pl_w","pl_pts")]
+df_B$pl_f <- (df_final$pl_f / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[df_final$comp_comm %in% c(3,4,5,9)]
+df_B$pl_a <- (df_final$pl_a / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[df_final$comp_comm %in% c(3,4,5,9)]
+df_B$pl_w <- (df_final$pl_w / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[df_final$comp_comm %in% c(3,4,5,9)]
+df_B$pl_pts <- (df_final$pl_pts / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[df_final$comp_comm %in% c(3,4,5,9)]
+df_B$group <- "B"
+df_A_B <- rbind(df_A, df_B)
 ```
 
-TODO: NORMALIZAR VALORES
+
+Consideramos tambien grupos Masculino/Femenino:
 
 ```{r}
-(df_final$pl_f / (df_final$pl_w + df_final$pl_d + df_final$pl_l))[df_final$comp_comm %in% c(1,10),]
-(df_final$pl_f / (df_final$pl_w + df_final$pl_d + df_final$pl_l))[df_final$comp_comm %in% c(3,4,5,9),]
+df_masculino <- df_final[!df_final$female, c("pl_f","pl_a","pl_w","pl_pts")]
+df_masculino$pl_f <- (df_final$pl_f / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[!df_final$female]
+df_masculino$pl_a <- (df_final$pl_a / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[!df_final$female]
+df_masculino$pl_w <- (df_final$pl_w / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[!df_final$female]
+df_masculino$pl_pts <- (df_final$pl_pts / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[!df_final$female]
+df_masculino$group <- "masculino"
+df_femenino <- df_final[df_final$female, c("pl_f","pl_a","pl_w","pl_pts")]
+df_femenino$pl_f <- (df_final$pl_f / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[df_final$female]
+df_femenino$pl_a <- (df_final$pl_a / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[df_final$female]
+df_femenino$pl_w <- (df_final$pl_w / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[df_final$female]
+df_femenino$pl_pts <- (df_final$pl_pts / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[df_final$female]
+df_femenino$group <- "femenino"
+df_masculino_femenino <- rbind(df_masculino, df_femenino)
 ```
 
-TODO: considerar tambien grupos Masculino/Femenino, Sub21/Absoluto
+Por último, tenemos en cuenta tambien los grupos Absoluta/Sub21:
+
+```{r}
+df_absoluta <- df_final[!df_final$sub21, c("pl_f","pl_a","pl_w","pl_pts")]
+df_absoluta$pl_f <- (df_final$pl_f / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[!df_final$sub21]
+df_absoluta$pl_a <- (df_final$pl_a / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[!df_final$sub21]
+df_absoluta$pl_w <- (df_final$pl_w / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[!df_final$sub21]
+df_absoluta$pl_pts <- (df_final$pl_pts / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[!df_final$sub21]
+df_absoluta$group <- "absoluta"
+df_sub21 <- df_final[df_final$sub21, c("pl_f","pl_a","pl_w","pl_pts")]
+df_sub21$pl_f <- (df_final$pl_f / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[df_final$sub21]
+df_sub21$pl_a <- (df_final$pl_a / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[df_final$sub21]
+df_sub21$pl_w <- (df_final$pl_w / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[df_final$sub21]
+df_sub21$pl_pts <- (df_final$pl_pts / 
+           (df_final$pl_w + df_final$pl_d + df_final$pl_l)
+         )[df_final$sub21]
+df_sub21$group <- "sub21"
+df_absoluta_sub21 <- rbind(df_absoluta, df_sub21)
+```
+
 
 ## Comprobación de la normalidad y homogeneidad de la varianza.
 
-```{r}
-c(mean(df_A$pl_f),mean(df_B$pl_f),mean(df_A$pl_a),mean(df_B$pl_a),
-  mean(df_A$pl_w),mean(df_B$pl_w),mean(df_A$pl_pts),mean(df_B$pl_pts))
-```
-
+En primer lugar comprobamos la normalidad de la población mediante un gráfico Q-Q.
 
 ```{r}
-c(sd(df_A$pl_f),sd(df_B$pl_f),sd(df_A$pl_a),sd(df_B$pl_a),sd(df_A$pl_w),sd(df_B$pl_w),sd(df_A$pl_pts),sd(df_B$pl_pts))
+qqnorm(df_A_B$pl_f); qqline(df_A_B$pl_f)
+```
+
+Vemos que el gráfico obtenido se aleja bastante de la recta que caracterizaría una distribución normal. Debemos, por lo tanto, aplicar métodos de inferencia no paramétrica para comparar promedios de goles a favor. Comprobemos el resto de métricas:
+
+```{r}
+qqnorm(df_A_B$pl_a); qqline(df_A_B$pl_a)
 ```
 
 ```{r}
-data1 <- df_A
-data1$pl_f <- (df_final$pl_f / (df_final$pl_w + df_final$pl_d + df_final$pl_l))[df_final$comp_comm %in% c(1,10)]
-data1$group <- 'A' 
-data2 <- df_B
-data2$pl_f <- (df_final$pl_f / (df_final$pl_w + df_final$pl_d + df_final$pl_l))[df_final$comp_comm %in% c(3,4,5,9)]
-data2$group <- 'B'
-data <- bind_rows(data1,data2)
-plot(aov(pl_pts~group, data))
+qqnorm(df_A_B$pl_w); qqline(df_A_B$pl_w)
 ```
 
-TODO: terminar
+```{r}
+qqnorm(df_A_B$pl_pts); qqline(df_A_B$pl_pts)
+```
 
+Comprobamos que en ninguna de ellas aplica la hípotesis de normalidad.
+
+Comprobamos la homocedasticidad mediante el test de Fligner-Killeen para las metricas de los grupos A y B:
+
+```{r}
+fligner.test(pl_f ~ group, data = df_A_B)
+```
+
+```{r}
+fligner.test(pl_a ~ group, data = df_A_B)
+```
+
+```{r}
+fligner.test(pl_w ~ group, data = df_A_B)
+```
+
+```{r}
+fligner.test(pl_pts ~ group, data = df_A_B)
+```
+
+Dado que todos los p-valores son ínfimos, estamos ante una situacion de heterocedasticidad.
+
+Comprobemos el mismo test para los grupos Masculino/Femenino y Absoluta/Sub21:
+
+```{r}
+fligner.test(pl_f ~ group, data = df_masculino_femenino)
+```
+
+```{r}
+fligner.test(pl_a ~ group, data = df_masculino_femenino)
+```
+
+```{r}
+fligner.test(pl_w ~ group, data = df_masculino_femenino)
+```
+
+```{r}
+fligner.test(pl_pts ~ group, data = df_masculino_femenino)
+```
+
+```{r}
+fligner.test(pl_f ~ group, data = df_absoluta_sub21)
+```
+
+```{r}
+fligner.test(pl_a ~ group, data = df_absoluta_sub21)
+```
+
+```{r}
+fligner.test(pl_w ~ group, data = df_absoluta_sub21)
+```
+
+```{r}
+fligner.test(pl_pts ~ group, data = df_absoluta_sub21)
+```
+
+Comprobamos que en todos los casos estamos ante una situación de heterocedasticidad.
 
 ## Aplicación de pruebas estadísticas para comparar los grupos de datos. En función de los datos y el objetivo del estudio, aplicar pruebas de contraste de hipótesis, correlaciones, regresiones, etc. Aplicar al menos tres métodos de análisis diferentes.
 
-Aquí puede ir  estadísticas de los equipos más destacados y un clustering de equipos 
+A continuación, vamos a comparar las medias de las métricas para los distintos grupos mediante un test de Wilcoxon:
 
 ```{r}
-wilcox.test(data$pl_f~data$group)
+wilcox.test(df_A_B$pl_f~df_A_B$group)
 ```
 
-TODO: incorporar los años de las competiciones en un analisis de regresion
+```{r}
+wilcox.test(df_A_B$pl_a~df_A_B$group)
+```
 
-TODO: estudiar correlacion entre goles a favor y puntos obtenidos
+```{r}
+wilcox.test(df_A_B$pl_w~df_A_B$group)
+```
 
-# Representación de los resultados a partir de tablas y gráficas.
+```{r}
+wilcox.test(df_A_B$pl_pts~df_A_B$group)
+```
 
-plots de los equipos y un plot del clustering con sus fronteras de decisión
+```{r}
+wilcox.test(df_masculino_femenino$pl_f~df_masculino_femenino$group)
+```
 
-# Resolución del problema. A partir de los resultados obtenidos, ¿cuáles son las conclusiones? ¿Los resultados permiten responder al problema?
+```{r}
+wilcox.test(df_masculino_femenino$pl_a~df_masculino_femenino$group)
+```
+
+```{r}
+wilcox.test(df_masculino_femenino$pl_w~df_masculino_femenino$group)
+```
+
+```{r}
+wilcox.test(df_masculino_femenino$pl_pts~df_masculino_femenino$group)
+```
+
+```{r}
+wilcox.test(df_absoluta_sub21$pl_f~df_absoluta_sub21$group)
+```
+
+```{r}
+wilcox.test(df_absoluta_sub21$pl_a~df_absoluta_sub21$group)
+```
+
+```{r}
+wilcox.test(df_absoluta_sub21$pl_w~df_absoluta_sub21$group)
+```
+
+```{r}
+wilcox.test(df_absoluta_sub21$pl_pts~df_absoluta_sub21$group)
+```
+
+Encontramos resultados significativos, con p-valor menor que 0.05, al comparar goles y victorias entre equipos masculinos y femeninos.
+
+Visualicemos estas distribuciones:
+
+```{r}
+boxplot(df_masculino_femenino$pl_f~df_masculino_femenino$group)
+```
+
+```{r}
+boxplot(df_masculino_femenino$pl_a~df_masculino_femenino$group)
+```
+
+```{r}
+boxplot(df_masculino_femenino$pl_w~df_masculino_femenino$group)
+```
+
+En vista de los resultados del contraste entre medias, podemos concluir que el promedio de goles, tanto a favor como en contra, y de victorias es superior en las competiciones femeninas, frente a las competiciones masculinas.
+
+Veamos ahora mediante un analisis de correlación en qué medida la cantidad de goles a favor va de la mano con el total de partidos ganados.
+
+```{r}
+cor.test(df_masculino$pl_f, df_masculino$pl_w, method="spearman")
+```
+
+```{r}
+cor.test(df_masculino$pl_a, df_masculino$pl_w, method="spearman")
+```
+
+```{r}
+cor.test(df_femenino$pl_f, df_femenino$pl_w, method="spearman")
+```
+
+```{r}
+cor.test(df_femenino$pl_a, df_femenino$pl_w, method="spearman")
+```
+
+Vemos que las correlaciones entre goles y victorias son mucho mayores en las competiciones femeninas, lo que sugiere un menor número de empates.
+
+Para valorar esta hipótesis, vamos a modelar el total de puntos obtenidos por un equipo mediante un modelo lineal:
+
+```{r}
+summary(lm(df_masculino_femenino$pl_pts ~ 
+             df_masculino_femenino$group + df_masculino_femenino$pl_f + 
+             df_masculino_femenino$pl_a + df_masculino_femenino$pl_w ))
+```
+
+Podemos comprobar como, siendo todos los parámetros significativos, el más relevante es el número de victorias, como es de esperar. A igualdad de victorias, el modelo da mas importancia a evitar goles en contra que a conseguir goles a favor. Además, a igualdad de circunstancias, los equipos masculinos tienden a conseguir un mayor número de puntos, lo cual se explica por la mayor prevalencia de empates dentro de las categorías masculinas.
 
 
+# Gráficos, tablas y resolución del problema
+
+Los resultados mas significativos que hemos encontrado se ubican en torno al género de los participantes:
+
+```{r}
+bb <- df_clean[,c("pl_team", "female")] %>% distinct()
+bbb <- df_clean[,c("comp", "female")] %>% distinct()
+comm <- list()
+n <- length(bb[,1])
+for (i in 1:n ){
+comm[paste("T:",bb[i,"pl_team"])] <- bb[i,"female"]
+}
+n <- length(bbb[,1])
+for (i in 1:n ){
+comm[paste("C:",bbb[i,"comp"])] <- bbb[i,"female"]
+}
+col <- c()
+for ( i in 1:length(V(graph)$name)){
+  if (length(comm[[(V(graph)$name[i])]]) < 1) {
+      col <- c(col, "#0000FF")    
+  } else {
+  if (comm[[(V(graph)$name[i])]]) {
+      col <- c(col, "#00FF00")
+  } else {
+      col <- c(col, "#0000FF")
+  }}
+
+}
+plot(graph, vertex.label=NA, vertex.size=15, arrow.width=1,vertex.color=col);legend(
+  'topleft',legend=c("Masculino", "Femenino"), pch=20, col=c("#0000FF","#00FF00"))
+```
+
+En este grafo podemos ver como las competiciones femeninas representan cúmulos alejados del nucleo central de la competición. Mientras que en la componente conexa de mayor tamaño no hemos encontrado diferencias estadísticas significativas, este aislamiento de las categorías femeninas hace más probable encontrar situaciones y estilos de juego que se alejen de la tendencia dominante.
+
+Nos hemos encontrado con la dificultad de unas observaciones que, lejos de aproximarse a una distribución normal, se acumulan en gran medida en torno al mínimo a la vez mantienen una gran prevalencia de valores elevados:
+
+```{r}
+qqnorm(df_A_B$pl_f); qqline(df_A_B$pl_f)
+```
+
+Esta situación es característica de escenarios competitivos, donde la mayoria de individuos lucha por mantenerse relevante, mientras que unos pocos muestran una holgada superioridad respecto al resto.
+
+Observando los contrastes de hipótesis sobre las medias del futbol masculino y femenino, nos ha sorprendido ver que todas son significativamente diferentes exceptuando el total de puntos obtenidos:
+
+```{r}
+a <- as.numeric(wilcox.test(df_masculino_femenino$pl_f~df_masculino_femenino$group)[3])
+b <- as.numeric(wilcox.test(df_masculino_femenino$pl_a~df_masculino_femenino$group)[3])
+c <- as.numeric(wilcox.test(df_masculino_femenino$pl_w~df_masculino_femenino$group)[3])
+d <- as.numeric(wilcox.test(df_masculino_femenino$pl_pts~df_masculino_femenino$group)[3])
+
+data.frame(
+metrica=c("Goles a favor","Goles en contra","Victorias","Puntos"),
+"p-valor"=c(a,b,c,d)
+)
+```
+
+Para ahondar en esto, hemos recurrido a una correlación de Spearman para entender mejor las similitudes y diferencias entre estos grupos de jugadores:
+
+```{r}
+a <- as.numeric(cor.test(df_masculino$pl_f, df_masculino$pl_w, method="spearman")[4])
+b <- as.numeric(cor.test(df_masculino$pl_a, df_masculino$pl_w, method="spearman")[4])
+c <- as.numeric(cor.test(df_femenino$pl_f, df_femenino$pl_w, method="spearman")[4])
+d <- as.numeric(cor.test(df_femenino$pl_a, df_femenino$pl_w, method="spearman")[4])
+
+data.frame(
+  Goles=c("A favor", "En contra"),
+  Masculino=c(a,b),
+  Femenino=c(c,d)
+)
+```
+
+Observamos por el coeficiente de correlacción de Spearman entre goles y victorias que, al tener mas impacto ambos tipos de goles en los partidos femeninos, en los partidos masculinos los goles conducen al empate con mayor frecuencia.
+
+Por último, la tabla obtenida mediante el modelo lineal confirma nuestra conclusión sobre los empates, dado que otorga mayor puntuación a los hombres en circunstancias de ausencia de victorias:
+
+```{r}
+summary(lm(df_masculino_femenino$pl_pts ~ 
+             df_masculino_femenino$group + df_masculino_femenino$pl_f
+           + df_masculino_femenino$pl_a + df_masculino_femenino$pl_w ))[4]
+```
